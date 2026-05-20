@@ -1,123 +1,162 @@
-export default function WitchBhaiya() {
-  const insta = 'https://instagram.com/witchbhaiyabd';
-
-  const services = [
-    'Love Guidance 💘',
-    'Finance Guidance 💰',
-    'Blockage Clearing 🕯️',
-    'Protection Rituals 🖤',
-    'Confidence & Self-Worth ✨',
-    'Career Guidance 🔮',
-    'Energy Cleansing 🌙',
-    'Spiritual Insight 🕯️',
-    'Dream Interpretation 🌌',
-    'Manifestation Support 🌹'
-  ];
-
-  const floating = ['🌙', '🖤', '✨', '🕯️', '🔮', '♀️', '🌹'];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-[#1a0000] to-[#3b0000] text-white overflow-hidden relative font-serif">
-      <style>{`
-        @keyframes float {
-          0% { transform: translateY(0px); opacity: 0.5; }
-          50% { transform: translateY(-30px); opacity: 1; }
-          100% { transform: translateY(0px); opacity: 0.5; }
-        }
-        @keyframes shoot {
-          0% { transform: translateX(-100px) translateY(-100px); opacity: 0; }
-          30% { opacity: 1; }
-          100% { transform: translateX(120vw) translateY(100vh); opacity: 0; }
-        }
-        .glass {
-          background: rgba(255,255,255,0.06);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255,255,255,0.08);
-        }
-      `}</style>
-
-      {floating.map((emoji, i) => (
-        <div
-          key={i}
-          className="absolute text-3xl"
-          style={{
-            left: `${10 + i * 12}%`,
-            top: `${15 + (i % 4) * 18}%`,
-            animation: `float ${4 + i}s ease-in-out infinite`,
-          }}
-        >
-          {emoji}
-        </div>
-      ))}
-
-      <div
-        className="absolute text-2xl opacity-60"
-        style={{ animation: 'shoot 5s linear infinite' }}
-      >✨</div>
-
-      <section className="flex flex-col items-center justify-center text-center px-6 pt-28 pb-20 relative z-10">
-        <div className="border border-red-900 px-8 py-3 rounded-full bg-black/30 shadow-2xl mb-6">
-          <span className="tracking-[0.4em] text-red-300 text-sm">MYSTICAL • LUXURY • SPIRITUAL</span>
-        </div>
-
-        <h1 className="text-6xl md:text-8xl font-bold tracking-[0.2em] text-red-800 drop-shadow-[0_0_20px_rgba(120,0,0,0.8)]">
-          WITCH BHAIYA
-        </h1>
-
-        <p className="mt-6 text-red-100 max-w-xl text-lg opacity-90">
-          Mystical guidance, symbolic rituals, readings, and spiritual support with a luxury dark aesthetic.
-        </p>
-
-        <button
-          onClick={() => window.open(insta, '_blank')}
-          className="mt-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#4b0000] to-[#800000] hover:scale-105 transition text-lg shadow-2xl"
-        >
-          Contact on Instagram 🔮
-        </button>
-      </section>
-
-      <section className="px-6 pb-20 relative z-10">
-        <h2 className="text-4xl text-center font-bold text-red-200 mb-10">
-          Services
-        </h2>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="glass rounded-[2rem] p-6 shadow-2xl hover:scale-105 transition duration-300"
-            >
-              <h3 className="text-2xl text-red-200 mb-3">{service}</h3>
-              <p className="text-gray-300 text-sm mb-5">
-                Personalized spiritual guidance and symbolic ritual-inspired support.
-              </p>
-              <button
-                onClick={() => window.open(insta, '_blank')}
-                className="w-full py-3 rounded-xl bg-[#5a0000] hover:bg-[#7a0000] transition"
-              >
-                Enquire on Instagram
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="text-center px-6 pb-24 relative z-10">
-        <div className="glass rounded-[2rem] max-w-2xl mx-auto p-8">
-          <h2 className="text-4xl font-bold text-red-200 mb-4">Contact</h2>
-          <p className="text-lg text-gray-300 mb-6">Instagram: @witchbhaiyabd</p>
-          <button
-            onClick={() => window.open(insta, '_blank')}
-            className="px-8 py-4 rounded-2xl bg-gradient-to-r from-[#4b0000] to-[#800000] hover:scale-105 transition shadow-xl"
-          >
-            Open Instagram 🖤
-          </button>
-        </div>
-      </section>
-
-      <footer className="text-center text-xs text-gray-400 px-8 pb-10 opacity-80 relative z-10">
-        All spiritual rituals and blessings are intended for personal guidance and positivity. Results are not guaranteed.
-      </footer>
-    </div>
-  );
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Witch Bhaiya</title>
+<style>
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: linear-gradient(to bottom, #000000, #1a0000, #3b0000);
+  color: white;
+  overflow-x: hidden;
 }
+
+@keyframes float {
+  0% { transform: translateY(0px); opacity: 0.5; }
+  50% { transform: translateY(-30px); opacity: 1; }
+  100% { transform: translateY(0px); opacity: 0.5; }
+}
+
+@keyframes shoot {
+  0% { transform: translate(-100px,-100px); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translate(120vw,100vh); opacity: 0; }
+}
+
+.floating {
+  position: absolute;
+  font-size: 30px;
+  animation: float ease-in-out infinite;
+}
+
+.shooting-star {
+  position: fixed;
+  font-size: 24px;
+  opacity: 0.6;
+  animation: shoot 5s linear infinite;
+}
+
+.hero {
+  text-align: center;
+  padding: 120px 20px 60px;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid #5c0000;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.4);
+}
+
+h1 {
+  font-size: 70px;
+  color: #8b0000;
+  letter-spacing: 8px;
+  text-shadow: 0 0 20px rgba(120,0,0,0.8);
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: auto;
+  color: #f5dcdc;
+  font-size: 18px;
+}
+
+button {
+  background: linear-gradient(to right, #4b0000, #800000);
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.services {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 25px;
+}
+
+.contact {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  padding: 30px;
+}
+</style>
+</head>
+<body>
+
+<div class="shooting-star">✨</div>
+
+<div class="floating" style="left:10%; top:15%; animation-duration:4s;">🌙</div>
+<div class="floating" style="left:25%; top:20%; animation-duration:5s;">🖤</div>
+<div class="floating" style="left:40%; top:10%; animation-duration:6s;">✨</div>
+<div class="floating" style="left:55%; top:25%; animation-duration:7s;">🕯️</div>
+<div class="floating" style="left:70%; top:18%; animation-duration:5s;">🔮</div>
+<div class="floating" style="left:85%; top:12%; animation-duration:6s;">🌹</div>
+
+<section class="hero">
+  <div class="badge">MYSTICAL • LUXURY • SPIRITUAL</div>
+  <h1>WITCH BHAIYA</h1>
+  <p class="subtitle">
+    Mystical guidance, symbolic rituals, readings, and spiritual support with a luxury dark aesthetic.
+  </p>
+  <button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">
+    Contact on Instagram 🔮
+  </button>
+</section>
+
+<section class="services">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card"><h3>Love Guidance 💘</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
+    <div class="card"><h3>Finance Guidance 💰</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
+    <div class="card"><h3>Blockage Clearing 🕯️</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
+    <div class="card"><h3>Protection Rituals 🖤</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
+    <div class="card"><h3>Career Guidance 🔮</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
+    <div class="card"><h3>Energy Cleansing 🌙</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Contact</h2>
+  <p>Instagram: @witchbhaiyabd</p>
+  <button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Open Instagram 🖤</button>
+</section>
+
+<footer>
+All spiritual rituals and blessings are intended for personal guidance and positivity. Results are not guaranteed.
+</footer>
+
+</body>
+</html>
