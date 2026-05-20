@@ -1,162 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Witch Bhaiya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  background: linear-gradient(to bottom, #000000, #1a0000, #3b0000);
-  color: white;
-  overflow-x: hidden;
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); opacity: 0.5; }
-  50% { transform: translateY(-30px); opacity: 1; }
-  100% { transform: translateY(0px); opacity: 0.5; }
-}
-
-@keyframes shoot {
-  0% { transform: translate(-100px,-100px); opacity: 0; }
-  30% { opacity: 1; }
-  100% { transform: translate(120vw,100vh); opacity: 0; }
-}
-
-.floating {
-  position: absolute;
-  font-size: 30px;
-  animation: float ease-in-out infinite;
-}
-
-.shooting-star {
-  position: fixed;
-  font-size: 24px;
-  opacity: 0.6;
-  animation: shoot 5s linear infinite;
-}
-
-.hero {
-  text-align: center;
-  padding: 120px 20px 60px;
-}
-
-.badge {
-  display: inline-block;
-  border: 1px solid #5c0000;
-  padding: 12px 24px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.4);
-}
-
-h1 {
-  font-size: 70px;
-  color: #8b0000;
-  letter-spacing: 8px;
-  text-shadow: 0 0 20px rgba(120,0,0,0.8);
-}
-
-.subtitle {
-  max-width: 700px;
-  margin: auto;
-  color: #f5dcdc;
-  font-size: 18px;
-}
-
-button {
-  background: linear-gradient(to right, #4b0000, #800000);
-  border: none;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-.services {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 30px;
-  padding: 25px;
-}
-
-.contact {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-footer {
-  text-align: center;
-  font-size: 12px;
-  color: #aaa;
-  padding: 30px;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins,sans-serif;background:linear-gradient(to bottom,#000,#180000,#350000,#120000,#000);color:#fff;overflow-x:hidden}
+html{scroll-behavior:smooth}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+@keyframes glow{0%,100%{text-shadow:0 0 8px rgba(150,0,0,.4)}50%{text-shadow:0 0 25px rgba(255,0,0,.7)}}
+.floating{position:fixed;font-size:2rem;opacity:.45;animation:float 7s ease-in-out infinite;pointer-events:none}
+nav{position:sticky;top:0;background:rgba(0,0,0,.8);backdrop-filter:blur(10px);padding:15px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.08)}
+nav a{color:#ffd6d6;text-decoration:none;padding:10px 18px;background:rgba(255,255,255,.06);border-radius:20px}
+.hero{text-align:center;padding:120px 20px 80px}
+.badge{display:inline-block;padding:12px 22px;border:1px solid #6b0000;border-radius:999px;background:rgba(255,255,255,.05)}
+h1{font-family:Cinzel,serif;font-size:clamp(3rem,10vw,6rem);letter-spacing:10px;color:#a30000;animation:glow 4s infinite;margin-top:20px}
+.subtitle{max-width:950px;margin:25px auto;line-height:1.9;color:#f2dada}
+.btn{display:inline-block;margin:8px;padding:15px 28px;border-radius:20px;background:linear-gradient(90deg,#420000,#8b0000);color:white;text-decoration:none;font-weight:600;transition:.3s}
+.btn:hover{transform:scale(1.05)}
+.section{padding:80px 20px}
+.title{text-align:center;font-family:Cinzel,serif;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:20px;color:#ffd0d0}
+.text{max-width:950px;margin:auto;text-align:center;color:#ddd;line-height:1.9;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;max-width:1300px;margin:auto}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:28px;border-radius:28px;backdrop-filter:blur(10px)}
+.card h3{color:#ffe1e1;margin-bottom:10px}.card p{color:#ddd;line-height:1.7;margin-bottom:15px}
+.quote{text-align:center;font-style:italic;color:#ffdede;max-width:900px;margin:25px auto;font-size:1.1rem}
+footer{text-align:center;padding:50px 20px;color:#aaa;font-size:12px;border-top:1px solid rgba(255,255,255,.08)}
 </style>
 </head>
 <body>
+<div class="floating" style="left:5%;top:10%">🌙</div>
+<div class="floating" style="left:20%;top:70%;animation-duration:9s">🖤</div>
+<div class="floating" style="left:45%;top:15%;animation-duration:5s">🕯️</div>
+<div class="floating" style="left:70%;top:65%;animation-duration:8s">🔮</div>
+<div class="floating" style="left:85%;top:20%;animation-duration:7s">🦇</div>
+<div class="floating" style="left:92%;top:80%;animation-duration:6s">🌹</div>
 
-<div class="shooting-star">✨</div>
-
-<div class="floating" style="left:10%; top:15%; animation-duration:4s;">🌙</div>
-<div class="floating" style="left:25%; top:20%; animation-duration:5s;">🖤</div>
-<div class="floating" style="left:40%; top:10%; animation-duration:6s;">✨</div>
-<div class="floating" style="left:55%; top:25%; animation-duration:7s;">🕯️</div>
-<div class="floating" style="left:70%; top:18%; animation-duration:5s;">🔮</div>
-<div class="floating" style="left:85%; top:12%; animation-duration:6s;">🌹</div>
+<nav>
+<a href="#services">Services</a>
+<a href="#experience">Experience</a>
+<a href="#paths">Blessings</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</nav>
 
 <section class="hero">
-  <div class="badge">MYSTICAL • LUXURY • SPIRITUAL</div>
-  <h1>WITCH BHAIYA</h1>
-  <p class="subtitle">
-    Mystical guidance, symbolic rituals, readings, and spiritual support with a luxury dark aesthetic.
-  </p>
-  <button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">
-    Contact on Instagram 🔮
-  </button>
+<div class="badge">🌙 MYSTICAL • DARK LUXURY • MAROON ELEGANCE • SPIRITUAL 🖤</div>
+<h1>WITCH BHAIYA</h1>
+<p class="subtitle">🦇 Welcome to a sanctuary of maroon shadows, moonlight, roses, candles, mystery, symbolism, and spiritual guidance. Explore reflective readings, symbolic ritual-inspired blessings, dream interpretation, confidence, emotional clarity, abundance mindset, and mystical aesthetics in a luxury vampire-inspired atmosphere. 🌹✨</p>
+<a class="btn" href="https://instagram.com/witchbhaiyabd" target="_blank">🔮 Contact on Instagram</a>
+<a class="btn" href="#services">🌙 Explore Services</a>
 </section>
 
-<section class="services">
-  <h2>Services</h2>
-  <div class="grid">
-    <div class="card"><h3>Love Guidance 💘</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
-    <div class="card"><h3>Finance Guidance 💰</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
-    <div class="card"><h3>Blockage Clearing 🕯️</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
-    <div class="card"><h3>Protection Rituals 🖤</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
-    <div class="card"><h3>Career Guidance 🔮</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
-    <div class="card"><h3>Energy Cleansing 🌙</h3><button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Enquire</button></div>
-  </div>
+<section id="services" class="section">
+<h2 class="title">🕯️ Mystical Services</h2>
+<p class="text">Offerings are intended for spiritual guidance, symbolic support, positivity, and self-reflection. ✨</p>
+<div class="grid">
+<div class="card"><h3>💘 Love Guidance</h3><p>Rose-inspired guidance for confidence, emotional clarity, attraction energy, and self-love. 🌹</p><a class="btn" href="https://instagram.com/witchbhaiyabd" target="_blank">Ask Now</a></div>
+<div class="card"><h3>💰 Finance Guidance</h3><p>Confidence, focus, abundance mindset, and motivation symbolism for prosperity. 🪙</p><a class="btn" href="https://instagram.com/witchbhaiyabd" target="_blank">Ask Now</a></div>
+<div class="card"><h3>🕯️ Blockage Clearing</h3><p>Grounding, symbolic cleansing, and clarity-focused reflective practices. 🌑</p><a class="btn" href="https://instagram.com/witchbhaiyabd" target="_blank">Ask Now</a></div>
+<div class="card"><h3>🖤 Protection Energy</h3><p>Protective symbolism and confidence rituals for emotional resilience. 🦇</p><a class="btn" href="https://instagram.com/witchbhaiyabd" target="_blank">Ask Now</a></div>
+<div class="card"><h3>🔮 Spiritual Readings</h3><p>Reflection and guidance for emotions, crossroads, dreams, and intuition. 🌙</p><a class="btn" href="https://instagram.com/witchbhaiyabd" target="_blank">Ask Now</a></div>
+<div class="card"><h3>🌌 Dream Interpretation</h3><p>Explore recurring symbols and subconscious meanings hidden in dreams. ✨</p><a class="btn" href="https://instagram.com/witchbhaiyabd" target="_blank">Ask Now</a></div>
+<div class="card"><h3>♀️ Aphrodite-Inspired Blessings</h3><p>Beauty, charm, self-worth, and confidence symbolism. 🌹</p><a class="btn" href="https://instagram.com/witchbhaiyabd" target="_blank">Ask Now</a></div>
+<div class="card"><h3>🌙 Lilith-Inspired Guidance</h3><p>Confidence, empowerment, inner strength, and symbolic independence. 🖤</p><a class="btn" href="https://instagram.com/witchbhaiyabd" target="_blank">Ask Now</a></div>
+</div>
 </section>
 
-<section class="contact">
-  <h2>Contact</h2>
-  <p>Instagram: @witchbhaiyabd</p>
-  <button onclick="window.open('https://instagram.com/witchbhaiyabd','_blank')">Open Instagram 🖤</button>
+<section id="experience" class="section">
+<h2 class="title">🦇 The Witch Bhaiya Experience</h2>
+<p class="quote">“Candles flicker. Roses bloom. Moonlight whispers. Intention begins.” 🕯️🌹</p>
+<p class="text">A dark luxury aesthetic filled with maroon shadows, floating mystical symbols, gothic energy, roses, moonlight, and immersive atmosphere. Designed for people who love mystery, symbolism, aesthetics, and spiritual reflection. 🌙</p>
 </section>
 
-<footer>
-All spiritual rituals and blessings are intended for personal guidance and positivity. Results are not guaranteed.
-</footer>
+<section id="paths" class="section">
+<h2 class="title">🌙 Choose Your Symbolic Path</h2>
+<div class="grid">
+<div class="card"><h3>🌹 Path of Aphrodite</h3><p>Beauty, confidence, self-love, charm, and emotional softness.</p></div>
+<div class="card"><h3>🖤 Path of Lilith</h3><p>Empowerment, confidence, inner power, and healthy boundaries.</p></div>
+<div class="card"><h3>🔮 Path of Reflection</h3><p>Dreams, journaling, symbolism, and spiritual guidance.</p></div>
+</div>
+</section>
 
+<section id="faq" class="section">
+<h2 class="title">❓ FAQ</h2>
+<div class="grid">
+<div class="card"><h3>📸 How do I contact?</h3><p>All buttons redirect to Instagram: @witchbhaiyabd</p></div>
+<div class="card"><h3>✨ Are results guaranteed?</h3><p>No. Spiritual guidance is for positivity and reflection only.</p></div>
+<div class="card"><h3>🌙 What is offered?</h3><p>Reflective readings, symbolic ritual-inspired support, and guidance.</p></div>
+</div>
+</section>
+
+<section id="contact" class="section">
+<h2 class="title">📸 Contact</h2>
+<p class="text">Instagram: @witchbhaiyabd</p>
+<p style="text-align:center"><a class="btn" href="https://instagram.com/witchbhaiyabd" target="_blank">🖤 Open Instagram</a></p>
+</section>
+
+<footer>🕯️ All spiritual rituals and blessings are intended for personal guidance, positivity, and symbolic support only. Results are not guaranteed.</footer>
 </body>
 </html>
